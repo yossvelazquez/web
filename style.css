@@ -1,0 +1,360 @@
+/* Estilos generales para el cuerpo de la página */
+body {
+    margin: 0;
+    font-weight: bold;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    letter-spacing: 0.5px;
+    transition: background 0.5s;
+}
+
+/* Estilos para el título principal */
+h1 {
+    color: #724f78;
+    font-family: 'Pacifico', cursive, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 38px;
+    margin: 28px 0 10px 0;
+    letter-spacing: 2px;
+    animation: fadeInDown 1s;
+}
+
+/* Estilos para subtítulos */
+h2 {
+    color: #00bfae;
+    font-family: 'Dancing Script', cursive, 'Segoe Script', 'Brush Script MT', cursive, 'Comic Sans MS', sans-serif;
+    font-size: 28px;
+    margin: 18px 0;
+    letter-spacing: 2px;
+    padding: 10px 28px;
+    border-radius: 24px;
+    display: inline-block;
+    animation: fadeInUp 1.2s;
+}
+
+/* Estilos para párrafos */
+p {
+    color: #ffffff;
+    font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 19px;
+    margin: 12px 0;
+    line-height: 1.6;
+    text-shadow: 0 1px 0 #fff;
+}
+
+/* Encabezado principal */
+header {
+    display: flex;
+    justify-content: space-between;
+    min-height: 110px;
+    align-items: center;
+    padding: 0 32px;
+    border-radius: 0 0 24px 24px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.13);
+    font-family: 'Montserrat', 'Courier New', Courier, monospace;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    animation: fadeInDown 1s;
+}
+
+/* Estilos generales para enlaces */
+a {
+    text-decoration: none;
+    transition: color 0.2s, background 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+
+/* Contenedor del logo */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+/* Imagen del logo */
+.logo img {
+    height: 70px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.13);
+    margin-right: 10px;
+    border-radius: 30%;
+    border: 3px solid #fff;
+    background: #fff;
+    animation: bounceIn 1.2s;
+}
+
+/* Menú de navegación principal */
+nav {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+}
+
+/* Enlaces del menú de navegación */
+nav a {
+    text-align: center;
+    color: #6c5588;
+    padding: 5px 28px;
+    border-radius: 30px;
+    box-shadow: 0 2px 8px rgba(186,104,200,0.08);
+    font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+    font-size: 19px;
+    letter-spacing: 1.2px;
+    font-weight: 600;
+    display: block;
+    border: 1px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0; top: 0; right: 0; bottom: 0;
+    background: linear-gradient(90deg, #e1bee7 0%, #b2dfdb 100%);
+    opacity: 0;
+    z-index: 0;
+    transition: opacity 0.3s;
+    border-radius: 2px;
+}
+
+nav a:hover, nav a:focus {
+    color: #fff;
+    background: linear-gradient(90deg, #a6acb3 60%, #a7d5d1 100%);
+    box-shadow: 0 3px 20px #19011d;
+    border: 2px solid #5f9da4;
+    transform: scale(1.07);
+}
+
+nav a:hover::after, nav a:focus::after {
+    opacity: 0.18;
+}
+
+/* Contenedor del carrito de compras */
+.carrito {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(90deg, #f8bbd0 0%, #b2ebf2 100%);
+    padding: 12px 18px;
+    border-radius: 18px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.13);
+    font-family: 'Montserrat', 'Courier New', Courier, monospace;
+    font-size: 20px;
+    color: #4f3c66;
+    margin-left: 18px;
+    cursor: pointer;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.carrito:hover {
+    box-shadow: 0 8px 32px #e1bee7;
+    transform: scale(1.05);
+}
+
+/* Imagen del carrito */
+.carrito img {
+    width: 38px;
+    height: 38px;
+    margin-right: 8px;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.13);
+    background: #fff;
+}
+
+/* Texto del carrito */
+.carrito span {
+    font-weight: bold;
+    color: #4f3c66;
+    font-family: 'Montserrat', 'Courier New', Courier, monospace;
+    font-size: 20px;
+    margin-left: 5px;
+}
+
+/* Imagen de flores con animación */
+.flower-img {
+    transition: transform 0.3s cubic-bezier(.4,2,.6,1), box-shadow 0.3s;
+    cursor: pointer;
+    width: 240px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 18px;
+    box-shadow: 0 4px 18px #e1bee7;
+    margin: 18px;
+    border: 3px solid #fff;
+    background: #fff;
+    animation: zoomInBg 1.2s;
+}
+
+/* Efecto hover en imagen de flores */
+.flower-img:hover {
+    transform: scale(1.13) rotate(-2deg);
+    box-shadow: 0 12px 36px #5940fb;
+    z-index: 2;
+    border: 3px solid #284765;
+}
+
+/* Menú secundario */
+.secondary-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 28px 0;
+    flex-wrap: wrap;
+    background: linear-gradient(90deg, #e1bee7 0%, #b2dfdb 100%);
+    padding: 10px 0;
+    font-family: 'Montserrat', 'Courier New', Courier, monospace;
+    border-radius: 18px;
+    box-shadow: 0 2px 12px #b2dfdb;
+    gap: 12px;
+}
+
+/* Sección de redes sociales */
+.social-media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 16px 0;
+    background: linear-gradient(90deg, #fffde7 0%, #fce4ec 100%);
+    padding: 6px 0;
+    font-family: 'Montserrat', 'Courier New', Courier, monospace;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px #fce4ec;
+    gap: 10px;
+}
+
+.social-media a img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px #e1bee7;
+    margin: 0 6px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.social-media a img:hover {
+    transform: scale(1.18) rotate(-8deg);
+    box-shadow: 0 6px 24px #e040fb;
+}
+
+/* Estilos responsivos para pantallas pequeñas */
+@media (max-width: 900px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        min-height: auto;
+        padding: 18px 10px;
+    }
+    .logo img {
+        width: 60px;
+        height: 60px;
+    }
+    nav {
+        gap: 8px;
+    }
+    nav a {
+        padding: 10px 16px;
+        font-size: 17px;
+    }
+    .carrito {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+    .flower-img {
+        width: 180px;
+        height: 120px;
+    }
+}
+
+@media (max-width: 600px) {
+    h1 { font-size: 26px; }
+    h2 { font-size: 20px; }
+    .flower-img { width: 120px; height: 80px; }
+    nav { flex-direction: column; gap: 0; }
+    nav a { margin-bottom: 6px; }
+    .secondary-menu, .social-media { flex-direction: column; gap: 6px; }
+}
+
+/* Animaciones personalizadas */
+@keyframes zoomInBg {
+    0% { transform: scale(0.9);}
+    100% { transform: scale(1);}
+}
+@keyframes fadeInDown {
+    0% { opacity: 0; transform: translateY(-40px);}
+    100% { opacity: 1; transform: translateY(0);}
+}
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(40px);}
+    100% { opacity: 1; transform: translateY(0);}
+}
+@keyframes fadeIn {
+    0% { opacity: 0;}
+    100% { opacity: 1;}
+}
+@keyframes bounceIn {
+    0% { opacity: 0; transform: scale(0.7);}
+    60% { opacity: 1; transform: scale(1.1);}
+    80% { transform: scale(0.95);}
+    100% { transform: scale(1);}
+}
+
+
+.cart-bounce {
+  animation: cart-bounce 0.4s;
+}
+@keyframes cart-bounce {
+  0% { transform: scale(1);}
+  30% { transform: scale(1.2);}
+  60% { transform: scale(0.95);}
+  100% { transform: scale(1);}
+}
+.cart-shake {
+  animation: cart-shake 0.3s;
+}
+@keyframes cart-shake {
+  0% { transform: translateX(0);}
+  20% { transform: translateX(-8px);}
+  40% { transform: translateX(8px);}
+  60% { transform: translateX(-4px);}
+  80% { transform: translateX(4px);}
+  100% { transform: translateX(0);}
+}
+/* Estilos para el botón de carrito */
+button {
+    background-color: #9b6b93;
+    color: rgb(141, 62, 62);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+}
+button:hover {
+    background-color: #7a4f6b;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transform: scale(1.05);
+}
+button:active {
+    background-color: #6a3f5b;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transform: scale(0.95);
+}
+/* Estilos para el footer */
+footer {
+    background-color: #f8f8f8;
+    color: #333;
+    text-align: center;
+    padding: 20px 0;
+    font-family: 'Montserrat', 'Courier New', Courier, monospace;
+    font-size: 16px;
+    border-top: 1px solid #ddd;
+    margin-top: 40px;
+}
+footer a {
+    color: #6c5588;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+footer a:hover {
+    color: #4f3c66;
+    text-decoration: none;
+}

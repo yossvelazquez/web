@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Festividades</title>
+    <link rel="stylesheet" href="estilospages.css">
+    <div class="nav">
+            <a href="index.html">Inicio</a>
+            <a href="ramos.html">Ramos</a>
+            <a href="populares.html">Más vendidos</a>
+            <a href="arreglos.html">Arreglos</a> 
+            <a href="Floreros.html">Floreros</a>
+    </div>
+</head>
+
+<body>
+    <script src="carrito.js"></script>
+    <div class="cart-icon" style="position: fixed; top: 24px; right: 24px; z-index: 1000; cursor: pointer;">
+        <img src="img_index\carrito de compras.png" alt="Carrito de compras" id="cartIcon" style="width: 48px;">
+        <span id="cartCount" style="position: absolute; top: 0; right: 0; background: #d6336c; color: #fff; border-radius: 50%; padding: 2px 8px; font-size: 1em;">0</span>
+    </div>
+    <!-- Modal del carrito -->
+    <div id="cartModal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.35); z-index:2000; align-items:center; justify-content:center;">
+        <div style="background:#fff; border-radius:16px; max-width:400px; width:90%; padding:32px 24px 24px 24px; box-shadow:0 8px 32px rgba(60,60,60,0.18); position:relative;">
+            <button id="closeCart" style="position:absolute; top:12px; right:16px; background:none; border:none; font-size:1.5em; color:#d6336c; cursor:pointer;">&times;</button>
+            <h3 style="margin-top:0; color:#d6336c; text-align:center;">Tu Carrito</h3>
+            <div id="cartItems" style="max-height:220px; overflow-y:auto; margin-bottom:18px;"></div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:18px;">
+                <strong>Total:</strong>
+                <span id="cartTotal">$0.00</span>
+            </div>
+            <button id="clearCart" style="background:#e0e2e6; color:#d6336c; border:none; border-radius:8px; padding:8px 16px; margin-right:8px; cursor:pointer;">Vaciar Carrito</button>
+            <button id="checkoutCart" style="background:linear-gradient(90deg,#d6336c 60%,#67acaa 100%); color:#fff; border:none; border-radius:8px; padding:8px 16px; cursor:pointer;">Comprar</button>
+        </div>
+    </div>
+        <h2>Día Festivo</h2>
+        <p>Celebra los días festivos con nuestros arreglos especiales.</p>
+        <div class="holiday-arrangements" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+            <div>
+                <img src="festividades/aniversario.jpg" alt="aniversario" width="400" height="350">
+                <p>Ramo de aniversario</p>
+                <p>$1600 MXN</p>
+                <button onclick="addToCart({name: 'aniversario', price: 1600, qty: 1, img:'festividades/aniversario.jpg'})">Añadir al carrito</button>
+            </div>
+            <div>
+                <img src="festividades/aniversario2.jpg" alt="aniversario2" width="400" height="350">
+                <p>Ramo de aniversario forma de corazón</p>
+                <p>$2000 MXN</p>
+                <button onclick="addToCart({name: 'aniversario2', price: 2000, qty: 1, img:'festividades/aniversario2.jpg'})">Añadir al carrito</button>
+            </div>
+            <div>
+                <img src="festividades/pedida.jpg" alt="pedida" width="400" height="350">
+                <p>Ramo de pedida</p>
+                <p>$900 MXN</p>
+                <button onclick="addToCart({name: 'pedida', price: 900, qty: 1, img:'festividades/pedida.jpg'})">Añadir al carrito</button>
+            </div>
+            <div>
+                <img src="festividades/pedida2.jpg" alt="pedida2" width="400" height="350">
+                <p>Ramo de pedida con rosas blancas y rojas</p>
+                <p>$950 MXN</p>
+                <button onclick="addToCart({name: 'pedida2', price: 950, qty: 1, img:'festividades/pedida2.jpg'})">Añadir al carrito</button>
+            </div>
+            <div>
+                <img src="festividades/pedida3.jpg" alt="pedida3" width="400" height="350">
+                <p>Ramo de pedida con rosas blancas</p>
+                <p>$800 MXN</p>
+                <button onclick="addToCart({name: 'pedida3', price: 800, qty: 1, img:'festividades/pedida3.jpg'})">Añadir al carrito</button>
+            </div>
+            <div>
+                <img src="festividades/pedia4.jpg" alt="pedida4" width="400" height="350">
+                <p>Ramo de pedida con rosas rojas</p>
+                <p>$1300 MXN</p>
+                <button onclick="addToCart({name: 'pedida4', price: 1300, qty: 1, img:'festividades/pedia4.jpg'})">Añadir al carrito</button>
+            </div>
+            <div>
+                <img src="festividades/diadelamadre.jpg" alt="madre1" width="400" height="350">
+                <p>Ramo del día de la madre</p>
+                <p>$1550 MXN</p>
+                <button onclick="addToCart({name: 'diadelamadre', price: 1550, qty: 1, img:'festividades/diadelamadre.jpg'})">Añadir al carrito</button>
+            </div>
+            <div>
+                <img src="festividades/diadelamadre2.jpg" alt="madre2" width="400" height="350">
+                <p>Ramo para mamá</p>
+                <p>$900 MXN</p>
+                <button onclick="addToCart({name: 'diadelamadre2', price: 900, qty: 1, img:'festividades/diadelamadre2.jpg'})">Añadir al carrito</button>
+            </div>
+            <div>
+                <img src="festividades/diadelamadre3.jpg" alt="madre3" width="400" height="350">
+                <p>Ramo de flores para mamá</p>
+                <p>$250 MXN</p>
+                <button onclick="addToCart({name: 'diadelamadre3', price: 250, qty: 1, img:'festividades/diadelamadre3.jpg'})">Añadir al carrito</button>
+            </div>
+            <div>
+                <img src="festividades/felizcumpleaños.jpg" alt="cumple1" width="400" height="350">
+                <p>Ramo de cumpleaños</p>
+                <p>$1000 MXN</p>
+                <button onclick="addToCart({name: 'cumple1', price: 1000, qty: 1, img:'festividades/felizcumpleaños.jpg'})">Añadir al carrito</button>
+            </div>
+            <div>
+                <img src="festividades/felizcumpleaños2.jpg" alt="cumple2" width="400" height="350">
+                <p>Ramo de cumpleaños grande</p>
+                <p>$3300 MXN</p>
+                <button onclick="addToCart({name: 'cumple2', price: 3300, qty: 1, img:'festividades/felizcumpleaños2.jpg'})">Añadir al carrito</button>
+            </div>
+            <div>
+                <img src="festividades/felizcumpleaños3.jpg" alt="cumple3" width="400" height="350">
+                <p>Ramo de cumpleaños mamá</p>
+                <p>$1250 MXN</p>
+                <button onclick="addToCart({name: 'cumple3', price: 1250, qty: 1, img:'festividades/felizcumpleaños3.jpg'})">Añadir al carrito</button>
+            </div>
+            <div>
+                <img src="festividades/felizcumpleaños4.jpg" alt="cumple4" width="400" height="350">
+                <p>Ramo de cumpleaños abuela</p>
+                <p>$1250 MXN</p>
+                <button onclick="addToCart({name: 'cumple4', price: 1250, qty: 1, img:'festividades/felizcumpleaños4.jpg'})">Añadir al carrito</button>
+            </div>
+            <div>
+                <img src="festividades/felizcumpleaños5.jpg" alt="cumple5" width="400" height="350">
+                <p>Ramo de cumpleaños con perlas</p>
+                <p>$3100 MXN</p>
+                <button onclick="addToCart({name: 'cumple5', price: 3100, qty: 1, img:'festividades/felizcumpleaños5.jpg'})">Añadir al carrito</button>
+            </div>
+            <div>
+                <img src="festividades/graduacion.jpg" alt="graduacion" width="400" height="350">
+                <p>Ramo de graduación</p>
+                <p>$700 MXN</p>
+                <button onclick="addToCart({name: 'graduacion', price: 700, qty: 1, img:'festividades/graduacion.jpg'})">Añadir al carrito</button>
+            </div>
+            <div>
+                <img src="festividades/graduacion2.jpg" alt="graduacion2" width="400" height="350">
+                <p>Ramo de graduación con rosas rosas</p>
+                <p>$400 MXN</p>
+                <button onclick="addToCart({name: 'graduacion2', price: 400, qty: 1, img:'festividades/graduacion2.jpg'})">Añadir al carrito</button>
+            </div>
+            <div>
+                <img src="festividades/graduacion3.jpg" alt="graduacion3" width="400" height="350">
+                <p>Ramo de graduación con rosas rosas y peluche</p>
+                <p>$600 MXN</p>
+                <button onclick="addToCart({name: 'graduacion3', price: 600, qty: 1, img:'festividades/graduacion3.jpg'})">Añadir al carrito</button>
+            </div>
+            <div>
+                <img src="festividades/graduacion4.jpg" alt="graduacion4" width="400" height="350">
+                <p>Ramo de graduación con rosas naranjas y peluche</p>
+                <p>$600 MXN</p>
+                <button onclick="addToCart({name: 'graduacion4', price: 600, qty: 1, img:'festividades/graduacion4.jpg'})">Añadir al carrito</button>
+            </div>
+        </div>  
+
+</body>
+</html>

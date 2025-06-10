@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es"></html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Las Flores de Yoselin</title>
+    <link rel="stylesheet" href="style.css">
+   
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="img_index\logo.jpg" alt="Logo">
+            <h2>Yoselin's Florist</h2>
+        </div>
+
+        <div class="navegador">
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>  
+                <a href="#contact">Contact</a>
+                <a href="#reviews">reviews</a>
+            </nav>
+        </div>
+
+        <div class="municipio-selector">
+            <label for="municipio">Municipio:</label>
+            <select id="municipio">
+                <option value="Mo">Morelia</option>
+                <option value="Ur">Uruapan</option>
+                <option value="Pt">Pátzcuaro</option>
+                <option value="Zr">Zamora</option>
+                <option value="Ap">Apatzingán</option>
+                <option value="Zt">Zitácuaro</option>
+                <option value="Tc">Tacámbaro</option>
+            </select>
+        </div>
+        <br>
+    </header>
+    <nav class="secondary-menu">
+            <a href="ramos.html">Ramos</a>
+            <a href="populares.html">Más vendidos</a>
+            <a href="Festividades.html">Festividades</a>
+            <a href="arreglos.html">Arreglos</a> 
+            <a href="Floreros.html">Floreros</a>     
+    </nav>
+    <div class="cart-icon" style="position: fixed; top: 24px; right: 24px; z-index: 1000; cursor: pointer;">
+        <img src="img_index\carrito de compras.png" alt="Carrito de compras" id="cartIcon" style="width: 48px;">
+        <span id="cartCount" style="position: absolute; top: 0; right: 0; background: #d6336c; color: #fff; border-radius: 50%; padding: 2px 8px; font-size: 1em;">0</span>
+    </div>
+    <!-- Modal del carrito -->
+    <div id="cartModal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.35); z-index:2000; align-items:center; justify-content:center;">
+        <div style="background:#fff; border-radius:16px; max-width:400px; width:90%; padding:32px 24px 24px 24px; box-shadow:0 8px 32px rgba(60,60,60,0.18); position:relative;">
+            <button id="closeCart" style="position:absolute; top:12px; right:16px; background:none; border:none; font-size:1.5em; color:#d6336c; cursor:pointer;">&times;</button>
+            <h3 style="margin-top:0; color:#d6336c; text-align:center;">Tu Carrito</h3>
+            <div id="cartItems" style="max-height:220px; overflow-y:auto; margin-bottom:18px;"></div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:18px;">
+                <strong>Total:</strong>
+                <span id="cartTotal">$0.00</span>
+            </div>
+            <button id="clearCart" style="background:#e0e2e6; color:#d6336c; border:none; border-radius:8px; padding:8px 16px; margin-right:8px; cursor:pointer;">Vaciar Carrito</button>
+            <button id="checkoutCart" style="background:linear-gradient(90deg,#d6336c 60%,#67acaa 100%); color:#fff; border:none; border-radius:8px; padding:8px 16px; cursor:pointer;">Comprar</button>
+        </div>
+    </div>
+
+    <script src="carrito.js"></script>
+
+
+    <section id="home">
+        
+        <div id="florContainer"></div>
+
+        <div class="hero-section" style="position: relative; width: 100%; min-height: 350px; display: flex; align-items: center; justify-content: center; margin-bottom: 40px; overflow: hidden;">
+        <img src="img_index\fondo.jpg" alt="Flores frescas y hermosos arreglos florales" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; filter: brightness(0.68) blur(1px); animation: zoomInBg 12s ease-in-out infinite alternate;">
+        <div class="welcome-message" style="position: relative; z-index: 2; text-align: center; width: 100%; padding: 48px 16px;">
+            <h1 style="font-size:2.5em; color:#fff; font-family:'Segoe UI',sans-serif; letter-spacing:2px; margin-bottom:10px; text-shadow: 0 2px 16px rgba(60,60,60,0.22); animation: fadeInDown 1.2s;">
+                Bienvenidos a <span style="color:#f7c5e0; text-shadow: 0 2px 12px #5863a2;">Yoselin's Florist</span>
+            </h1>
+            <p style="font-size:1.3em; color:#f3f3f3; font-family:'Segoe UI',sans-serif; margin-top:0; text-shadow: 0 2px 10px rgba(60,60,60,0.18); animation: fadeInUp 1.5s;">
+                Donde la belleza de las flores cobra vida.
+            </p>
+            <a href="populares.html" style="display:inline-block; margin-top:28px; padding:14px 38px; background:linear-gradient(90deg,#d6336c 60%,#67acaa 100%); color:#fff; font-size:1.15em; border:none; border-radius:28px; box-shadow:0 2px 12px rgba(214,51,108,0.13); font-family:'Segoe UI',sans-serif; letter-spacing:1px; text-decoration:none; transition:transform 0.18s,box-shadow 0.18s; animation: bounceIn 2s;">
+                ¡Compra Ahora!
+            </a>
+            <hr style="width:60px; border:2px solid #d6336c; margin:24px auto 0 auto; border-radius:2px; opacity:0.85;">
+        </div>
+    </div>
+
+    <p style="font-size:1.3em; color:#666; font-family:'Segoe UI',sans-serif; text-align:center; margin: 20px 0; animation: fadeIn 2s;">
+        En Yoselin's Florist, ofrecemos una amplia variedad de flores frescas y hermosos arreglos florales para cada ocasión. Desde bodas hasta eventos especiales, tenemos lo que necesitas para hacer que cada momento sea inolvidable.
+    </p>
+    <div style="display: flex; flex-direction: column; align-items: center;">
+        <h2 style="font-size:2em; color:#828ed6; text-align:center; font-family:'Segoe UI',sans-serif; letter-spacing:1px; margin-bottom:20px; animation: fadeInDown 1.2s;">
+            Tipos de flores que ofrecemos
+        </h2>
+        <p style="font-size:1.2em; color:#555; font-family:'Segoe UI',sans-serif; text-align:center; margin-bottom:20px;">
+        </p>
+        <table style="margin: 10 auto; border-collapse: separate; border-spacing: 24px 18px; text-align: center;">
+            <tr>
+                <td style="text-align:center;">
+                    <img class="flower-img animated-flower" src="tiposdeflores/rosa roja.jpg" alt="rosa roja">
+                    <div style="font-weight:bold; margin-top:10px;">Rosa Roja</div>
+                </td>
+                <td style="text-align:center;">
+                    <img class="flower-img animated-flower" src="tiposdeflores/tulipan.jpg" alt="tulipan">
+                    <div style="font-weight:bold; margin-top:10px;">Tulipán</div>
+                </td>
+                <td style="text-align:center;">
+                    <img class="flower-img animated-flower" src="tiposdeflores/girasol.jpg" alt="girasol">
+                    <div style="font-weight:bold; margin-top:10px;">Girasol</div>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align:center;">
+                    <img class="flower-img animated-flower" src="tiposdeflores/gerbera.jpg" alt="gerbera">
+                    <div style="font-weight:bold; margin-top:10px;">Gerbera</div>
+                </td>
+                <td style="text-align:center;">
+                    <img class="flower-img animated-flower" src="tiposdeflores/lirio.jpg" alt="lirio">
+                    <div style="font-weight:bold; margin-top:10px;">Lirio</div>
+                </td>
+                <td style="text-align:center;">
+                    <img class="flower-img animated-flower" src="tiposdeflores/orquidea.jpg" alt="orquidea">
+                    <div style="font-weight:bold; margin-top:10px;">Orquídea</div>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align:center;">
+                    <img class="flower-img animated-flower" src="tiposdeflores/peonia.jpg" alt="peonia">
+                    <div style="font-weight:bold; margin-top:10px;">Peonía</div>
+                </td>
+                <td style="text-align:center;">
+                    <img class="flower-img animated-flower" src="tiposdeflores/hortensia.jpg" alt="hortensia" >
+                    <div style="font-weight:bold; margin-top:10px;">Hortensia</div>
+                </td>
+                <td style="text-align:center;">
+                    <img class="flower-img animated-flower" src="tiposdeflores/margarita.jpg" alt="margarita">
+                    <div style="font-weight:bold; margin-top:10px;">Margarita</div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+    <section id="about" style="max-width: 900px; margin: 40px auto 32px auto; padding: 70px 80px; background: #f4dfea; border-radius: 22px; box-shadow: 0 6px 24px rgba(214,51,108,0.10); display: flex; flex-wrap: wrap; align-items: center; gap: 36px; animation: fadeIn 1.5s;">
+        <div style="flex: 1 1 340px; min-width: 240px; animation: slideInLeft 1.2s;">
+            <h2 style="font-size:2.2em; color:#d6336c; font-family:'Segoe UI',sans-serif; margin-bottom:16px; letter-spacing:1px;">
+                Sobre Nosotros
+            </h2>
+            <p style="font-size:1.15em; color:#444; font-family:'Segoe UI',sans-serif; margin-bottom:14px; line-height:1.7;">
+                En <strong style="color:#67acaa;">Yoselin's Florist</strong> creamos <span style="color:#d6336c;">arreglos florales únicos</span> y personalizados para cada ocasión. Nuestro equipo combina creatividad, pasión y atención al detalle para ofrecerte flores frescas y un servicio cálido.
+            </p>
+            <p style="font-size:1.05em; color:#666; font-family:'Segoe UI',sans-serif; margin-bottom:12px; line-height:1.6;">
+                Ya sea para bodas, eventos o detalles cotidianos, tenemos una selección de flores hermosas y diseños originales que se adaptan a ti. Nos encanta ayudarte a expresar tus sentimientos con flores.
+            </p>
+            <p style="font-size:1.05em; color:#67acaa; font-family:'Segoe UI',sans-serif; margin-bottom:14px;">
+                Descubre nuestra galería y déjanos ser parte de tus momentos especiales.<br>
+                <span style="color:#d6336c; font-weight:bold;">¡Contáctanos para pedidos personalizados!</span>
+            </p>
+        </div>
+        <div style="flex: 1 1 220px; min-width: 180px; display: flex; justify-content: center; align-items: center;">
+            <img src="img_index\floreria.jpg" alt="Arreglo floral profesional" style="width:150%; max-width: 380px; border-radius:18px; box-shadow: 0 4px 18px rgba(214,51,108,0.13); object-fit:cover; animation: zoomInImg 1.3s;">
+        </div>
+    </section>
+    
+
+    <section id="contact" style="max-width: 900px; margin: 40px auto 32px auto; padding: 70px 80px; background: #e0e2e6; border-radius: 22px; box-shadow: 0 4px 18px rgba(227,139,170,0.09); display: flex; flex-wrap: wrap; align-items: center; gap: 36px; animation: fadeIn 1.5s;">
+        <h2 style="font-size:2em; color:#6eabb6; font-family:'Segoe UI',sans-serif; margin-bottom:16px; letter-spacing:1px;">
+            Contáctanos
+        </h2>
+        <br>
+        <p style="font-size:1.15em; color:#777676; font-family:'Segoe UI',sans-serif; margin-bottom:14px;">
+            Estamos aquí para ayudarte con cualquier consulta o pedido especial que tengas. Nuestro equipo está listo para ofrecerte un servicio excepcional y flores frescas de la mejor calidad.
+        </p>
+        <p style="font-size:1.15em; color:#777676; font-family:'Segoe UI',sans-serif; margin-bottom:14px;">
+            ¿Tienes alguna pregunta o deseas realizar un pedido? <br>No dudes en ponerte en contacto con nosotros.
+        </p>
+        <!--Enlace con mensaje personalizado-->
+        
+        <p style="font-size:1.1em; color:#666; font-family:'Segoe UI',sans-serif; margin-bottom:10px;">
+            <strong>Teléfono:</strong> <a href="tel:4331509081" style="color:#598e5c; text-decoration:none;">433 150 9081</a><br>
+            <strong>Email:</strong> <a href="mailto:yoselinflorist@gmail.com" style="color:#598e5c; text-decoration:none;">yoselinflorist@gmail.com</a>
+        </p>
+        <p style="font-size:1.1em; color:#666; font-family:'Segoe UI',sans-serif; margin-bottom:10px;">
+            Tienda por ahora solo en línea.<br>
+            Si deseas un pedido personalizado, ¡contáctanos!
+        </p>
+        <div style="flex: 1 1 220px; min-width: 180px; display: flex; justify-content: center; align-items: center;">
+            <img src="img_index\contactanos.jpg" alt="Arreglo floral profesional" style="width:100%; max-width: 280px; border-radius:18px; box-shadow: 0 4px 18px rgba(214,51,108,0.13); object-fit:cover; animation: zoomInImg 1.3s;">
+        </div>
+        <p>
+            <a href="https://wa.me/524436938809?text=Hola,%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre..." target="_blank" style="background-color: #7ba779; color: white; padding: 8px 20px; text-decoration: none; border-radius: 5px;">Enviar mensaje personalizado</a>
+        </p>
+        <p style="font-size:1.1em; color:#666; font-family:'Segoe UI',sans-serif; margin-bottom:10px;">
+            <strong>Ubicación:</strong> Morelia, Michoacán, México.
+        </p>
+        <p style="font-size:1.1em; color:#3c8153; font-family:'Segoe UI',sans-serif;">
+            ¡Esperamos verte pronto!
+        </p>
+        
+    </section>
+    
+  <section id="reviews" style="max-width: 900px; margin: 40px auto 32px auto; padding: 70px 80px; background: #e9e1e1; border-radius: 22px; box-shadow: 0 4px 18px rgba(227,139,170,0.09); display: flex; flex-wrap: wrap; align-items: center; gap: 36px; animation: fadeIn 1.5s;">
+        <h2 style="font-size:2em; color:#6eabb6; font-family:'Segoe UI',sans-serif; margin-bottom:16px; text-align:center; letter-spacing:1px; animation: fadeInDown 1.2s;">
+            Reseñas de Nuestros Clientes
+        <div style="margin-top:32px; text-align:center;">
+            <h4 style="color:#84b4bc; font-family:'Segoe UI',sans-serif; margin-bottom:12px;">Deja tu reseña</h4>
+            <form id="reviewForm" style="display:inline-block; max-width:300px; width:200%;">
+                <input type="text" id="reviewName" placeholder="Tu nombre" required style="width:60%; padding:8px; margin-bottom:10px; border-radius:6px; border:1px solid #ccc; font-size:1em;"><br>
+                <textarea id="reviewText" placeholder="Escribe tu reseña aquí..." required style="width:60%; padding:8px; border-radius:6px; border:1px solid #ccc; font-size:1em; min-height:60px; margin-bottom:10px;"></textarea><br>
+                <button type="submit" style="background:#c85f84; color:#fff; border:none; border-radius:6px; padding:4px 10px; font-size:0.85em; cursor:pointer;">Enviar Reseña</button>
+            </form>
+            <div id="userReviews" style="margin-top:24px; text-align:left; max-width:500px; margin-left:auto; margin-right:auto;"></div>
+        </div>
+    </section>
+        <script>
+        function renderReviews() {
+            const reviews = JSON.parse(localStorage.getItem('userReviews') || '[]');
+            const userReviews = document.getElementById('userReviews');
+            userReviews.innerHTML = '';
+            reviews.forEach((review, idx) => {
+                const reviewDiv = document.createElement('div');
+                reviewDiv.style.background = '#fff';
+                reviewDiv.style.borderRadius = '10px';
+                reviewDiv.style.boxShadow = '0 2px 8px rgba(214,51,108,0.07)';
+                reviewDiv.style.padding = '12px 18px';
+                reviewDiv.style.marginBottom = '12px';
+                reviewDiv.innerHTML = `<strong style="color:#d6336c;">${review.name}</strong><br><span style="color:#444;">"${review.text}"</span>
+                    <button onclick="deleteReview(${idx})" style="float:right; background:#e0e2e6; color:#d6336c; border:none; border-radius:6px; padding:2px 10px; margin-left:8px; cursor:pointer;">Borrar</button>`;
+                userReviews.prepend(reviewDiv);
+            });
+        }
+
+        function deleteReview(index) {
+            let reviews = JSON.parse(localStorage.getItem('userReviews') || '[]');
+            reviews.splice(reviews.length - 1 - index, 1); // Because of prepend
+            localStorage.setItem('userReviews', JSON.stringify(reviews));
+            renderReviews();
+        }
+
+        document.getElementById('reviewForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('reviewName').value.trim();
+            const text = document.getElementById('reviewText').value.trim();
+            if(name && text) {
+                let reviews = JSON.parse(localStorage.getItem('userReviews') || '[]');
+                reviews.push({name, text});
+                localStorage.setItem('userReviews', JSON.stringify(reviews));
+                renderReviews();
+                document.getElementById('reviewForm').reset();
+            }
+        });
+
+        window.onload = renderReviews;
+
+        // Hacer la pantalla más chica (ajustar el zoom)
+        document.body.style.zoom = "100%";
+        </script>
+        
+        <style>
+            #reviewForm input[type="text"], 
+            #reviewForm textarea {
+            width: 60% !important;
+            font-size: 0.85em !important;
+            padding: 4px !important;
+            }
+            #reviewForm textarea {
+            min-height: 32px !important;
+            }
+            #userReviews {
+            font-size: 0.60em !important;
+            }
+            #userReviews strong {
+            font-size: 1em !important;
+            }
+            #userReviews span {
+            font-size: 0.92em !important;
+            }
+            #userReviews button {
+            font-size: 0.92em !important;
+            padding: 2px 8px !important;
+            }
+        </style>
+        <footer style="background:#c57d96; color:#fff; padding:24px 16px; text-align:center; font-family:'Segoe UI',sans-serif; font-size:1.1em; position:relative;">
+        <p style="margin:0;">&copy; 2025 Yoselin's Florist. Todos los derechos reservados.</p>
+        <p style="margin:8px 0 0 0;">Diseñado con amor por Yoselin.</p><br>
+        
+        <div style="position:absolute; bottom:16px; left:50%; transform:translateX(-50%);">
+            <a href="#home" style="color:#fff; text-decoration:none; margin-right:16px;">Inicio</a>
+            <a href="#about" style="color:#fff; text-decoration:none; margin-right:16px;">Sobre Nosotros</a>
+            <a href="#contact" style="color:#fff; text-decoration:none;">Contacto</a>
+        </div>
+    </footer>
+    
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floreros</title>
+    <link rel="stylesheet" href="estilospages.css">
+    <nav class="nav">
+            <a href="index.html">Inicio</a>
+            <a href="ramos.html">Ramos</a>
+            <a href="populares.html">Más vendidos</a>
+            <a href="Festividades.html">Festividades</a>
+            <a href="arreglos.html">Arreglos</a> 
+    </nav>
+</head>
+
+    <body>
+        <script src="carrito.js"></script>
+        <div class="cart-icon" style="position: fixed; top: 24px; right: 24px; z-index: 1000; cursor: pointer;">
+        <img src="img_index\carrito de compras.png" alt="Carrito de compras" id="cartIcon" style="width: 48px;">
+        <span id="cartCount" style="position: absolute; top: 0; right: 0; background: #d6336c; color: #fff; border-radius: 50%; padding: 2px 8px; font-size: 1em;">0</span>
+    </div>
+    <!-- Modal del carrito -->
+    <div id="cartModal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.35); z-index:2000; align-items:center; justify-content:center;">
+        <div style="background:#fff; border-radius:16px; max-width:400px; width:90%; padding:32px 24px 24px 24px; box-shadow:0 8px 32px rgba(60,60,60,0.18); position:relative;">
+            <button id="closeCart" style="position:absolute; top:12px; right:16px; background:none; border:none; font-size:1.5em; color:#d6336c; cursor:pointer;">&times;</button>
+            <h3 style="margin-top:0; color:#d6336c; text-align:center;">Tu Carrito</h3>
+            <div id="cartItems" style="max-height:220px; overflow-y:auto; margin-bottom:18px;"></div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:18px;">
+                <strong>Total:</strong>
+                <span id="cartTotal">$0.00</span>
+            </div>
+            <button id="clearCart" style="background:#e0e2e6; color:#d6336c; border:none; border-radius:8px; padding:8px 16px; margin-right:8px; cursor:pointer;">Vaciar Carrito</button>
+            <button id="checkoutCart" style="background:linear-gradient(90deg,#d6336c 60%,#67acaa 100%); color:#fff; border:none; border-radius:8px; padding:8px 16px; cursor:pointer;">Comprar</button>
+        </div>
+    </div>
+        <h2>Floreros</h2>
+        <p>Descubre nuestra selección de floreros minimalistas para complementar tus flores. ¡Compra el que más te guste!</p>
+        <div class="vases arrangements">
+            <div class="vase-card">
+            <img src="floreros/florero2.jpg" alt="Florero 2" width="180" height="132">
+            <h3>Florero hoja</h3>
+            <p>$265 MXN</p>
+            <button onclick="addToCart({name: 'Florero hoja', price: 265, qty: 1, img:'floreros/florero2.jpg'})">Agregar al carrito</button>
+            </div>
+            <div class="vase-card">
+            <img src="floreros/florero3.jpg" alt="Florero 3" width="180" height="132">
+            <h3>Florero armónico </h3>
+            <p>$295 MXN</p>
+            <button onclick="addToCart({name: 'Florero armónico', price: 295, qty: 1, img:'floreros/florero3.jpg'})">Agregar al carrito</button>
+            </div>
+            <div class="vase-card">
+            <img src="floreros/florero4.jpg" alt="Florero 4" width="180" height="132">
+            <h3>Florero plisado</h3>
+            <p>$320 MXN</p>
+            <button onclick="addToCart({name: 'Florero plisado', price: 320, qty: 1, img:'floreros/florero4.jpg'})">Agregar al carrito</button>
+            </div>
+            <div class="vase-card">
+            <img src="floreros/florero5.jpg" alt="Florero 5" width="180" height="132">
+            <h3>Florero acanalado</h3>
+            <p>$350 MXN</p>
+            <button onclick="addToCart({name: 'Florero acanalado', price: 350, qty: 1, img:'floreros/florero5.jpg'})">Agregar al carrito</button>
+            </div>
+            <div class="vase-card">
+            <img src="floreros/florero6.jpg" alt="Florero 6" width="180" height="132">
+            <h3>Florero silueta pura</h3>
+            <p>$270 MXN</p>
+            <button onclick="addToCart({name: 'Florero silueta pura', price: 270, qty: 1, img:'floreros/florero6.jpg'})">Agregar al carrito</button>
+            </div>
+            <div class="vase-card">
+            <img src="floreros/florero7.jpg" alt="Florero 7" width="180" height="132">
+            <h3>Florero balance</h3>
+            <p>$310 MXN</p>
+            <button onclick="addToCart({name: 'Florero balance', price: 310, qty: 1, img:'floreros/florero7.jpg'})">Agregar al carrito</button>
+            </div>
+            <div class="vase-card">
+            <img src="floreros/florero8.jpg" alt="Florero 8" width="180" height="132">
+            <h3>Florero Mvidrio soplado</h3>
+            <p>$280 MXN</p>
+            <button onclick="addToCart({name: 'Florero Mvidrio soplado', price: 280, qty: 1, img:'floreros/florero8.jpg'})">Agregar al carrito</button>
+            </div>
+            <div class="vase-card">
+            <img src="floreros/florero9.jpg" alt="Florero 9" width="180" height="132">
+            <h3>Florero joya de vidrio</h3>
+            <p>$260 MXN</p>
+            <button onclick="addToCart({name: 'Florero joya de vidrio', price: 260, qty: 1, img:'floreros/florero9.jpg'})">Agregar al carrito</button>
+            </div>
+        </div>
+
+    </body>
+
+</html>

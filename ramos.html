@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilospages.css">   
+</head>
+
+<body>
+     <div class="nav">
+        <a href="index.html">Inicio</a>
+        <a href="Floreros.html">Floreros</a>
+        <a href="Arreglos.html">Arreglos</a>
+        <a href="Festividades.html">Festividades</a>
+        <a href="Populares.html">Mas vendidos</a> 
+        <select name="tipo-ramo" id="tipo-ramo">
+            <option value="" disabled selected>Elige tipo de ramo</option>
+            <option value="rosas">Rosas</option>
+            <option value="girasoles">Girasoles</option>
+            <option value="mixto">Mixto</option>
+            <option value="lilies">Lirios</option>
+            <option value="tulipanes">Tulipanes</option>
+            <option value="orquideas">Orquídeas</option>
+            <option value="margaritas">Margaritas</option>
+            <option value="peonias">Peonias</option>
+            <option value="gerberas">Gerberas</option>
+            <option value="hortensias">Hortensias</option>
+            <option value="novia">Ramo de Novia</option>
+            <option value="todos">Todos</option>
+        </select>
+    </div>
+    <script src="carrito.js"></script>
+    <script>
+document.getElementById('cartIcon').onclick = function() {
+    document.getElementById('cartModal').style.display = 'flex';
+};
+document.getElementById('closeCart').onclick = function() {
+    document.getElementById('cartModal').style.display = 'none';
+};
+</script>
+    <div class="arreglos">
+        <div class="cart-icon" style="position: fixed; top: 24px; right: 24px; z-index: 1000; cursor: pointer;">
+        <img src="img_index\carrito de compras.png" alt="Carrito de compras" id="cartIcon" style="width: 48px;">
+        <span id="cartCount" style="position: absolute; top: 0; right: 0; background: #d6336c; color: #fff; border-radius: 50%; padding: 2px 8px; font-size: 1em;">0</span>
+    </div>
+    <!-- Modal del carrito -->
+    <div id="cartModal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.35); z-index:2000; align-items:center; justify-content:center;">
+        <div style="background:#fff; border-radius:16px; max-width:400px; width:90%; padding:32px 24px 24px 24px; box-shadow:0 8px 32px rgba(60,60,60,0.18); position:relative;">
+            <button id="closeCart" style="position:absolute; top:12px; right:16px; background:none; border:none; font-size:1.5em; color:#d6336c; cursor:pointer;">&times;</button>
+            <h3 style="margin-top:0; color:#d6336c; text-align:center;">Tu Carrito</h3>
+            <div id="cartItems" style="max-height:220px; overflow-y:auto; margin-bottom:18px;"></div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:18px;">
+                <strong>Total:</strong>
+                <span id="cartTotal">$0.00</span>
+            </div>
+            <button id="clearCart" style="background:#e0e2e6; color:#d6336c; border:none; border-radius:8px; padding:8px 16px; margin-right:8px; cursor:pointer;">Vaciar Carrito</button>
+            <button id="checkoutCart" style="background:linear-gradient(90deg,#d6336c 60%,#67acaa 100%); color:#fff; border:none; border-radius:8px; padding:8px 16px; cursor:pointer;">Comprar</button>
+        </div>
+    </div>
+    <h2>Ramos Disponibles</h2>
+    <p>Elige el ramo perfecto para cualquier ocasión</p>
+    <div class="arrangements" id="arrangements">
+        <div>
+            <img src="ramos unicos/50rosasrojayrosa.jpg" alt="Ramo de Rosas" data-tipo="rosas" width="400" height="400">
+            <p>$1000 MXN</p>
+            <button onclick="addToCart({name: 'Ramo de Rosas', price: 1000, qty: 1, img:'ramos unicos/50rosasrojayrosa.jpg'})">Agregar al carrito</button>
+        </div>
+        <div>
+            <img src="ramos unicos/50rosasrosayblanco.jpg" alt="Ramo de Rosas2" data-tipo="rosas" width="400" height="400">
+            <p>$1000 MXN</p>
+            <button onclick="addToCart({name: 'Ramo de Rosas2', price: 1000, qty: 1, img:'ramos unicos/50rosasrosayblanco.jpg'})">Agregar al carrito</button>
+        </div>
+        <div>
+            <img src="ramos unicos/100rojayrosa.jpg" alt="Ramo de Rosas3" data-tipo="rosas" width="400" height="400">
+            <p>$1200 MXN</p>
+            <button onclick="addToCart({name: 'Ramo de Rosas3', price: 1200, qty: 1, img:'ramos unicos/100rojayrosa.jpg'})">Agregar al carrito</button>
+        </div>
+        <div>
+            <img src="ramos unicos/100rosasrojarosayblanca.jpg" alt="Ramo de Rosas4" data-tipo="rosas" width="400" height="400">
+            <p>$1000 MXN</p>
+            <button onclick="addToCart({name: 'Ramo de Rosas4', price: 1000, qty: 1, img:'ramos unicos/100rosasrojarosayblanca.jpg'})">Agregar al carrito</button>
+        </div>
+        <div>
+            <img src="ramos unicos/rosasdecolores.jpg" alt="Ramo de Rosas5" data-tipo="rosas" width="400" height="400">
+            <p>$700 MXN</p>
+            <button onclick="addToCart({name: 'Ramo de Rosas5', price: 700, qty: 1, img:'ramos unicos/rosasdecolores.jpg'})">Agregar al carrito</button>
+        </div>
+        <div>
+            <img src="ramos unicos/rosas blancas.jpg" alt="Ramo de Rosas6" data-tipo="rosas" width="400" height="400">
+            <p>$750 MXN</p>
+            <button onclick="addToCart({name: 'Ramo de Rosas6', price: 750, qty: 1, img:'ramos unicos/rosas blancas.jpg'})">Agregar al carrito</button>
+        </div>
+        <div>
+            <img src="ramos unicos/rosassrojayblanca.jpg" alt="Ramo de Rosas7" data-tipo="rosas" width="400" height="400">
+            <p>$2100 MXN</p>
+            <button onclick="addToCart({name: 'Ramo de Rosas7', price: 2100, qty: 1, img:'ramos unicos/rosassrojayblanca.jpg'})">Agregar al carrito</button>
+        </div>
+        <div>
+            <img src="ramos unicos/rosassrojayblanca2.jpg" alt="Ramo de Rosas8" data-tipo="rosas" width="400" height="400">
+            <p>$1500 MXN</p>
+            <button onclick="addToCart({name: 'Ramo de Rosas8', price: 1500, qty: 1, img:'ramos unicos/rosassrojayblanca2.jpg'})">Agregar al carrito</button>
+        </div>
+        <div>
+            <img src="ramos unicos/rosasynuves.jpg" alt="Ramo de Rosas9" data-tipo="rosas" width="400" height="400">
+            <p>$500 MXN</p>
+            <button onclick="addToCart({name: 'Ramo de Rosas9', price: 500, qty: 1, img:'ramos unicos/rosasynuves.jpg'})">Agregar al carrito</button>
+        </div>
+        <div>
+            <img src="ramos unicos/rosasbonitas.jpg" alt="Ramo de Rosas10" data-tipo="rosas" width="400" height="400">
+            <p>$820 MXN</p>
+            <button onclick="addToCart({name: 'Ramo de Rosas10', price: 820, qty: 1, img:'ramos unicos/rosasbonitas.jpg'})">Agregar al carrito</button>
+        </div>
+        <div>
+            <img src="ramos unicos/rosasrojass.jpg" alt="Ramo de Rosas11" data-tipo="rosas" width="400" height="400">
+            <p>$6200 MXN</p>
+            <button onclick="addToCart({name: 'Ramo de Rosas11', price: 6200, qty: 1, img:'ramos unicos/rosasrojass.jpg'})">Agregar al carrito</button>
+        </div>
+        <div>
+            <img src="ramos unicos/girasoles.jpg" alt="Ramo de Girasoles" data-tipo="girasoles" width="400" height="400">
+            <p>$600 MXN</p>
+            <button onclick="addToCart({name: 'Ramo de Girasoles', price: 600, qty: 1, img:'ramos unicos/girasoles.jpg'})">Agregar al carrito</button>
+        </div>
+        <div>
+            <img src="ramos unicos/girasoles2.jpg" alt="Ramo de Girasoles2" data-tipo="girasoles" width="400" height="400">
+            <p>$790 MXN</p>
+            <button onclick="addToCart({name: 'Ramo de Girasoles2', price: 790, qty: 1, img:'ramos unicos/girasoles2.jpg'})">Agregar al carrito</button>
+        </div>
+        <div>
+            <img src="ramos unicos/girasoles3.jpg" alt="Ramo de Girasoles3" data-tipo="girasoles" width="400" height="400">
+            <p>$700 MXN</p>
+            <button onclick="addToCart({name: 'Ramo de Girasoles3', price: 700, qty: 1, img:'ramos unicos/girasoles3.jpg'})">Agregar al carrito</button>
+        </div>
+        <div>
+            <img src="ramos unicos/girasoles4.jpg" alt="Ramo de Girasoles4" data-tipo="girasoles" width="400" height="400">
+            <p>$680 MXN</p>
+            <button onclick="addToCart({name: 'Ramo de Girasoles4', price: 680, qty: 1, img:'ramos unicos/girasoles4.jpg'})">Agregar al carrito</button>
+        </div>
+        <div>
+            <img src="ramos unicos/girasoles5.jpg" alt="Ramo de Girasoles" data-tipo="girasoles" width="400" height="400">
+            <p>$750 MXN</p>
+            <button onclick="addToCart({name: 'Ramo de Girasoles5', price: 750, qty: 1, img:'ramos unicos/girasoles5.jpg'})">Agregar al carrito</button>
+        </div>
+        <div>
+            <img src="ramos unicos/girasoles6.jpg" alt="Ramo de Girasoles" data-tipo="girasoles" width="400" height="400">
+            <p>$1250 MXN</p>
+            <button onclick="addToCart({name: 'Ramo de Girasoles6', price: 1250, qty: 1, img:'ramos unicos/girasoles6.jpg'})">Agregar al carrito</button>
+        </div>
+        <div>
+            <img src="ramos unicos/100flores.jpg" alt="Ramo Mixto" data-tipo="mixto" width="400" height="400">
+            <p>$700 MXN</p>
+            <button onclick="addToCart({name: 'Ramo Mixto', price: 700, qty: 1, img:'ramos unicos/100flores.jpg'})">Agregar al carrito</button>
+        </div>
+        <div>
+            <img src="ramos unicos/ramoflores.jpg" alt="Ramo Mixto2" data-tipo="mixto" width="400" height="400">
+            <p>$750 MXN</p>
+            <button onclick="addToCart({name: 'Ramo Mixto2', price: 750, qty: 1, img:'ramos unicos/ramoflores.jpg'})">Agregar al carrito</button>
+        </div>
+        <div>
+            <img src="ramos unicos/ramoflores2.jpg" alt="Ramo Mixto3" data-tipo="mixto" width="400" height="400">
+            <p>$1250 MXN</p>
+            <button onclick="addToCart({name: 'Ramo Mixto3', price: 1250, qty: 1, img:'ramos unicos/ramoflores2.jpg'})">Agregar al carrito</button>
+        </div>
+        <div>
+            <img src="ramos unicos/ramoflores3.jpg" alt="Ramo Mixto" data-tipo="mixto" width="400" height="400">
+            <p>$950 MXN</p>
+            <button onclick="addToCart({name: 'Ramo Mixto4', price: 950, qty: 1, img:'ramos unicos/ramoflores3.jpg'})">Agregar al carrito</button>
+        </div>
+        <div>
+            <img src="ramos unicos/ramoflores4.jpg" alt="Ramo Mixto" data-tipo="mixto" width="400" height="400">
+            <p>$890 MXN</p>
+            <button onclick="addToCart({name: 'Ramo Mixto5', price: 890, qty: 1, img:'ramos unicos/ramoflores4.jpg'})">Agregar al carrito</button>
+        </div>
+        <div>
+            <img src="ramos unicos/ramoflores5.jpg" alt="Ramo Mixto" data-tipo="mixto" width="400" height="400">
+            <p>$900 MXN</p>
+            <button onclick="addToCart({name: 'Ramo Mixto6', price: 900, qty: 1, img:'ramos unicos/ramoflores5.jpg'})">Agregar al carrito</button>
+        </div>
+        <div>
+            <img src="ramos unicos/lirios.jpg" alt="Ramo de Lirios" data-tipo="lilies" width="400" height="400">
+            <p>$870 MXN</p>
+            <button onclick="addToCart({name: 'Ramo de Lirios', price: 870, qty: 1, img:'ramos unicos/lirios.jpg'})">Agregar al carrito</button>
+        </div>
+        <div>
+            <img src="ramos unicos/lirios2.jpg" alt="Ramo de Lirios" data-tipo="lilies" width="400" height="400">
+            <p>$800 MXN</p>
+            <button onclick="addToCart({name: 'Ramo de Lirios2', price: 800, qty: 1, img:'ramos unicos/lirios2.jpg'})">Agregar al carrito</button>
+        </div>
+        <div>
+            <img src="ramos unicos/lirios 3.jpg" alt="Ramo de Lirios" data-tipo="lilies" width="400" height="400">
+            <p>$800 MXN</p>
+            <button onclick="addToCart({name: 'Ramo de Lirios3', price: 800, qty: 1, img:'ramos unicos/lirios 3.jpg'})">Agregar al carrito</button>
+        </div>
+        <div>
+            <img src="ramos unicos/lirios 4.jpg" alt="Ramo de Lirios" data-tipo="lilies" width="400" height="400">
+            <p>$450 MXN</p>
+            <button onclick="addToCart({name: 'Ramo de Lirios4', price: 450, qty: 1, img:'ramos unicos/lirios 4.jpg'})">Agregar al carrito</button>
+        </div>
+        <div>
+            <img src="ramos unicos/lirios 5.jpg" alt="Ramo de Lirios" data-tipo="lilies" width="400" height="400">
+            <p>$1500 MXN</p>
+            <button onclick="addToCart({name: 'Ramo de Lirios5', price: 1500, qty: 1, img:'ramos unicos/lirios 5.jpg'})">Agregar al carrito</button>
+        </div>
+        <div>
+            <img src="ramos unicos/lirios 6.jpg" alt="Ramo de Lirios6" data-tipo="lilies" width="400" height="400">
+            <p>$550 MXN</p>
+            <button onclick="addToCart({name: 'Ramo de Lirios6', price: 550, qty: 1, img:'ramos unicos/lirios 6.jpg'})">Agregar al carrito</button>
+        </div>
+        <div>
+            <img src="ramos unicos/tulip1.jpg" alt="Ramo de Tulipanes" data-tipo="tulipanes" width="400" height="400">
+            <p>$1100 MXN</p>
+            <button onclick="addToCart({name: 'Ramo de Tulipanes', price: 1100, qty: 1, img:'ramos unicos/tulip1.jpg'})">Agregar al carrito</button>
+        </div>
+        <div>
+            <img src="ramos unicos/tulip2.jpg" alt="Ramo de Tulipanes" data-tipo="tulipanes" width="400" height="400">
+            <p>$1300 MXN</p>
+            <button onclick="addToCart({name: 'Ramo de Tulipanes2', price: 1300, qty: 1, img:'ramos unicos/tulip2.jpg'})">Agregar al carrito</button>
+        </div>
+        <div>
+            <img src="ramos unicos/tulip3.jpg" alt="Ramo de Tulipanes" data-tipo="tulipanes" width="400" height="400">
+            <p>$1500 MXN</p>
+            <button onclick="addToCart({name: 'Ramo de Tulipanes3', price: 1500, qty: 1, img:'ramos unicos/tulip3.jpg'})">Agregar al carrito</button>
+        </div>
+        <div>
+            <img src="ramos unicos/orquideas.jpg" alt="Ramo de Orquídeas" data-tipo="orquideas" width="400" height="400">
+            <p>$550 MXN</p>
+            <button onclick="addToCart({name: 'Ramo de Orquídeas', price: 550, qty: 1, img:'ramos unicos/orquideas.jpg'})">Agregar al carrito</button>
+        </div>
+        <div>
+            <img src="ramos unicos/orquideas2.jpg" alt="Ramo de Orquídeas" data-tipo="orquideas" width="400" height="400">
+            <p>$600 MXN</p>
+            <button onclick="addToCart({name: 'Ramo de Orquídeas2', price: 600, qty: 1, img:'ramos unicos/orquideas2.jpg'})">Agregar al carrito</button>
+        </div>
+        <div>
+            <img src="ramos unicos/orquideas3.jpg" alt="Ramo de Orquídeas" data-tipo="orquideas" width="400" height="400">
+            <p>$550 MXN</p>
+            <button onclick="addToCart({name: 'Ramo de Orquídeas3', price: 550, qty: 1, img:'ramos unicos/orquideas3.jpg'})">Agregar al carrito</button>
+        </div>
+        <div>
+            <img src="ramos unicos/orquideas4.jpg" alt="Ramo de Orquídeas" data-tipo="orquideas" width="400" height="400">
+            <p>$250 MXN</p>
+            <button onclick="addToCart({name: 'Ramo de Orquídeas4', price: 250, qty: 1, img:'ramos unicos/orquideas4.jpg'})">Agregar al carrito</button>
+        </div>
+        <div>
+            <img src="ramos unicos/orquideas5.jpg" alt="Ramo de Orquídeas" data-tipo="orquideas" width="400" height="400">
+            <p>$780 MXN</p>
+            <button onclick="addToCart({name: 'Ramo de Orquídeas5', price: 780, qty: 1, img:'ramos unicos/orquideas5.jpg'})">Agregar al carrito</button>
+        </div>
+        <div>
+            <img src="ramos unicos/orquideas6.jpg" alt="Ramo de Orquídeas" data-tipo="orquideas" width="400" height="400">
+            <p>$550 MXN</p>
+            <button onclick="addToCart({name: 'Ramo de Orquídeas6', price: 550, qty: 1, img:'ramos unicos/orquideas6.jpg'})">Agregar al carrito</button>
+        </div>
+        <div>
+            <img src="ramos unicos/margaritas.jpg" alt="Ramo de Margaritas" data-tipo="margaritas" width="400" height="400">
+            <p>$400 MXN</p>
+            <button onclick="addToCart({name: 'Ramo de Margaritas', price: 400, qty: 1, img:'ramos unicos/margaritas.jpg'})">Agregar al carrito</button>
+        </div>
+        <div>
+            <img src="ramos unicos/margaritas2.jpg" alt="Ramo de Margaritas" data-tipo="margaritas" width="400" height="400">
+            <p>$400 MXN</p>
+            <button onclick="addToCart({name: 'Ramo de Margaritas2', price: 400, qty: 1, img:'ramos unicos/margaritas2.jpg'})">Agregar al carrito</button>
+        </div>
+        <div>
+            <img src="ramos unicos/margaritas3.jpg" alt="Ramo de Margaritas" data-tipo="margaritas" width="400" height="400">
+            <p>$450 MXN</p>
+            <button onclick="addToCart({name: 'Ramo de Margaritas3', price: 450, qty: 1, img:'ramos unicos/margaritas3.jpg'})">Agregar al carrito</button>
+        </div>
+        <div>
+            <img src="ramos unicos/peonias.jpg" alt="Ramo de Peonias" data-tipo="peonias" width="400" height="400">
+            <p>$6000 MXN</p>
+            <button onclick="addToCart({name: 'Ramo de Peonias', price: 6000, qty: 1, img:'ramos unicos/peonias.jpg'})">Agregar al carrito</button>
+        </div>
+        <div>
+            <img src="ramos unicos/peonia2.jpg" alt="Ramo de Peonias" data-tipo="peonias" width="400" height="400">
+            <p>$6500 MXN</p>
+            <button onclick="addToCart({name: 'Ramo de Peonias2', price: 6500, qty: 1, img:'ramos unicos/peonia2.jpg'})">Agregar al carrito</button>
+        </div>
+        <div>
+            <img src="ramos unicos/peonia3.jpg" alt="Ramo de Peonias" data-tipo="peonias" width="400" height="400">
+            <p>$3700 MXN</p>
+            <button onclick="addToCart({name: 'Ramo de Peonias3', price: 3700, qty: 1, img:'ramos unicos/peonia3.jpg'})">Agregar al carrito</button>
+        </div>
+        <div>
+            <img src="ramos unicos/peonia4.jpg" alt="Ramo de Peonias" data-tipo="peonias" width="400" height="400">
+            <p>$2300 MXN</p>
+            <button onclick="addToCart({name: 'Ramo de Peonias4', price: 2300, qty: 1, img:'ramos unicos/peonia4.jpg'})">Agregar al carrito</button>
+        </div>
+        <div>
+            <img src="ramos unicos/peoniachiquito2.jpg" alt="Ramo de Peonias" data-tipo="peonias" width="400" height="400">
+            <p>$2000 MXN</p>
+            <button onclick="addToCart({name: 'Ramo de Peonias5', price: 2000, qty: 1, img:'ramos unicos/peoniachiquito2.jpg'})">Agregar al carrito</button>
+        </div>
+        <div>
+            <img src="ramos unicos/peoniaschiquito.jpg" alt="Ramo de Peonias" data-tipo="peonias" width="400" height="400">
+            <p>$1500 MXN</p>
+            <button onclick="addToCart({name: 'Ramo de Peonias6', price: 1500, qty: 1, img:'ramos unicos/peoniaschiquito.jpg'})">Agregar al carrito</button>
+        </div>
+        <div>
+            <img src="ramos unicos/gerberas.jpg" alt="Ramo de Gerberas" data-tipo="gerberas" width="400" height="400">
+            <p>$1600 MXN</p>
+            <button onclick="addToCart({name: 'Ramo de Gerberas', price: 1600, qty: 1, img:'ramos unicos/gerberas.jpg'})">Agregar al carrito</button>
+        </div>
+        <div>
+            <img src="ramos unicos/gerberas2.jpg" alt="Ramo de Gerberas" data-tipo="gerberas" width="400" height="400">
+            <p>$850 MXN</p>
+            <button onclick="addToCart({name: 'Ramo de Gerberas2', price: 850, qty: 1, img:'ramos unicos/gerberas2.jpg'})">Agregar al carrito</button>
+        </div>
+        <div>
+            <img src="ramos unicos/gerberas3.jpg" alt="Ramo de Gerberas" data-tipo="gerberas" width="400" height="400">
+            <p>$850 MXN</p>
+            <button onclick="addToCart({name: 'Ramo de Gerberas3', price: 850, qty: 1, img:'ramos unicos/gerberas3.jpg'})">Agregar al carrito</button>
+        </div>
+        <div>
+            <img src="ramos unicos/hortenciasyrotasetc.jpg" alt="Ramo de Hortensias" data-tipo="hortensias" width="400" height="400">
+            <p>$950 MXN</p>
+            <button onclick="addToCart({name: 'Ramo de Hortensias', price: 950, qty: 1, img:'ramos unicos/hortenciasyrotasetc.jpg'})">Agregar al carrito</button>
+        </div>
+        <div>
+            <img src="ramos unicos/hortensias.jpg" alt="Ramo de Hortensias" data-tipo="hortensias" width="400" height="400">
+            <p>$1100 MXN</p>
+            <button onclick="addToCart({name: 'Ramo de Hortensias2', price: 1100, qty: 1, img:'ramos unicos/hortensias.jpg'})">Agregar al carrito</button>
+        </div>
+        <div>
+            <img src="ramos unicos/hortensias3.jpg" alt="Ramo de Hortensias" data-tipo="hortensias" width="400" height="400">
+            <p>$1300 MXN</p>
+            <button onclick="addToCart({name: 'Ramo de Hortensias3', price: 1300, qty: 1, img:'ramos unicos/hortensias3.jpg'})">Agregar al carrito</button>
+        </div>
+        <div>
+            <img src="ramos unicos/hortensias4.jpg" alt="Ramo de Hortensias" data-tipo="hortensias" width="400" height="400">
+            <p>$2600 MXN</p>
+            <button onclick="addToCart({name: 'Ramo de Hortensias4', price: 2600, qty: 1, img:'ramos unicos/hortensias4.jpg'})">Agregar al carrito</button>
+        </div>
+        <div>
+            <img src="ramos unicos/novia1.jpg" alt="Ramo de Novia" data-tipo="novia" width="400" height="400">
+            <p>$2000 MXN</p>
+            <button onclick="addToCart({name: 'Ramo de Novia', price: 2000, qty: 1, img:'ramos unicos/novia1.jpg'})">Agregar al carrito</button>
+        </div>
+        <div>
+            <img src="ramos unicos/novia2.jpg" alt="Ramo de Novia" data-tipo="novia" width="400" height="400">
+            <p>$2100 MXN</p>
+            <button onclick="addToCart({name: 'Ramo de Novia2', price: 2100, qty: 1, img:'ramos unicos/novia2.jpg'})">Agregar al carrito</button>
+        </div>
+        <div>
+            <img src="ramos unicos/novia3.jpg" alt="Ramo de Novia" data-tipo="novia" width="400" height="400">
+            <p>$2200 MXN</p>
+            <button onclick="addToCart({name: 'Ramo de Novia3', price: 2200, qty: 1, img:'ramos unicos/novia3.jpg'})">Agregar al carrito</button>
+        </div>
+        <div>
+            <img src="ramos unicos/novia4.jpg" alt="Ramo de Novia" data-tipo="novia" width="400" height="400">
+            <p>$2100 MXN</p>
+            <button onclick="addToCart({name: 'Ramo de Novia4', price: 2100, qty: 1, img:'ramos unicos/novia4.jpg'})">Agregar al carrito</button>
+        </div>
+        <div>
+            <img src="ramos unicos/novia5.jpg" alt="Ramo de Novia" data-tipo="novia" width="400" height="400">
+            <p>$2000 MXN</p>
+            <button onclick="addToCart({name: 'Ramo de Novia5', price: 2000, qty: 1, img:'ramos unicos/novia5.jpg'})">Agregar al carrito</button>
+        </div>
+        <div>
+            <img src="ramos unicos/novia6.jpg" alt="Ramo de Novia" data-tipo="novia" width="400" height="400">
+            <p>$450 MXN</p>
+            <button onclick="addToCart({name: 'Ramo de Novia6', price: 450, qty: 1, img:'ramos unicos/novia6.jpg'})">Agregar al carrito</button>
+        </div>
+        <div>
+            <img src="ramos unicos/novia7.jpg" alt="Ramo de Novia" data-tipo="novia" width="400" height="400">
+            <p>$800 MXN</p>
+            <button onclick="addToCart({name: 'Ramo de Novia7', price: 800, qty: 1})">Agregar al carrito</button>
+        </div>
+        <div>
+            <img src="ramos unicos/novia9.jpg" alt="Ramo de Novia8" data-tipo="novia" width="400" height="400">
+            <p>$450 MXN</p>
+            <button onclick="addToCart({name: 'Ramo de Novia8', price: 450, qty: 1})">Agregar al carrito</button>
+        </div>
+    </div>
+    </div>
+<script>
+    const tipoRamoSelect = document.getElementById('tipo-ramo');
+    const arrangementsDiv = document.getElementById('arrangements');
+
+    tipoRamoSelect.addEventListener('change', function() {
+        const selectedTipo = this.value;
+        const items = arrangementsDiv.children;
+
+        for (let i = 0; i < items.length; i++) {
+            const img = items[i].querySelector('img');
+            if (!img) continue;
+            if (selectedTipo === 'todos' || img.dataset.tipo === selectedTipo) {
+                items[i].style.display = 'block';
+            } else {
+                items[i].style.display = 'none';
+            }
+        }
+    });
+</script>
+</body>
+</html>

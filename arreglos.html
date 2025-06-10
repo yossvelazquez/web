@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Areglos florales</title>
+     <link rel="stylesheet" href="estilospages.css">
+</head>
+
+<body>
+     <div class="nav">
+     <a href="index.html">Inicio</a>
+            <a href="ramos.html">Ramos</a>
+            <a href="populares.html">Más vendidos</a>
+            <a href="Festividades.html">Festividades</a>
+            <a href="Floreros.html">Floreros</a>
+     </div>
+<script src="carrito.js"></script>
+<div class="cart-icon" style="position: fixed; top: 24px; right: 24px; z-index: 1000; cursor: pointer;">
+        <img src="img_index\carrito de compras.png" alt="Carrito de compras" id="cartIcon" style="width: 48px;">
+        <span id="cartCount" style="position: absolute; top: 0; right: 0; background: #d6336c; color: #fff; border-radius: 50%; padding: 2px 8px; font-size: 1em;">0</span>
+    </div>
+    <!-- Modal del carrito -->
+    <div id="cartModal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.35); z-index:2000; align-items:center; justify-content:center;">
+        <div style="background:#fff; border-radius:16px; max-width:400px; width:90%; padding:32px 24px 24px 24px; box-shadow:0 8px 32px rgba(60,60,60,0.18); position:relative;">
+            <button id="closeCart" style="position:absolute; top:12px; right:16px; background:none; border:none; font-size:1.5em; color:#d6336c; cursor:pointer;">&times;</button>
+            <h3 style="margin-top:0; color:#d6336c; text-align:center;">Tu Carrito</h3>
+            <div id="cartItems" style="max-height:220px; overflow-y:auto; margin-bottom:18px;"></div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:18px;">
+                <strong>Total:</strong>
+                <span id="cartTotal">$0.00</span>
+            </div>
+            <button id="clearCart" style="background:#e0e2e6; color:#d6336c; border:none; border-radius:8px; padding:8px 16px; margin-right:8px; cursor:pointer;">Vaciar Carrito</button>
+            <button id="checkoutCart" style="background:linear-gradient(90deg,#d6336c 60%,#67acaa 100%); color:#fff; border:none; border-radius:8px; padding:8px 16px; cursor:pointer;">Comprar</button>
+        </div>
+      </div>
+<div class="arreglos">
+      <h2>Arreglos</h2>
+      <p>Descubre nuestra variedad de arreglos florales para cada ocasión.</p>
+      <div class="arrangements">
+            <div>
+                  <img src="arreglos florales/arreglo1.jpg" alt="Arreglo 1" width="400" height="350">
+                  <p>Arreglo 1 - $700</p>
+                  <button onclick="addToCart({name: 'Arreglo 1', price: 700, qty: 1, img:'arreglos florales/arreglo1.jpg'})">Agregar al carrito</button>
+            </div>
+            <div>
+                  <img src="arreglos florales/arreglo2.jpg" alt="Arreglo 2" width="400" height="350">
+                  <p>Arreglo 2 - $420</p>
+                  <button onclick="addToCart({name: 'Arreglo 2', price: 420, qty: 1, img:'arreglos florales/arreglo2.jpg'})">Agregar al carrito</button>
+            </div>
+            <div>
+                  <img src="arreglos florales/arreglo3.jpg" alt="Arreglo 3" width="400" height="350">
+                  <p>Arreglo 3 - $620</p>
+                  <button onclick="addToCart({name: 'Arreglo 3', price: 620, qty: 1, img:'arreglos florales/arreglo3.jpg'})">Agregar al carrito</button>
+            </div>
+            <div>
+                  <img src="arreglos florales/arreglo4.jpg" alt="Arreglo 4" width="400" height="350">
+                  <p>Arreglo 4 - $600</p>
+                  <button onclick="addToCart({name: 'Arreglo 4', price: 600, qty: 1, img:'arreglos florales/arreglo4.jpg'})">Agregar al carrito</button>
+            </div>
+            <div>
+                  <img src="arreglos florales/arreglo5.jpg" alt="Arreglo 5" width="400" height="350">
+                  <p>Arreglo 5 - $720</p>
+                  <button onclick="addToCart({name: 'Arreglo 5', price: 720, qty: 1, img:'arreglos florales/arreglo5.jpg'})">Agregar al carrito</button>
+            </div>
+            <div>
+                  <img src="arreglos florales/arreglo6.jpg" alt="Arreglo 6" width="400" height="350">
+                  <p>Arreglo 6 - $700</p>
+                  <button onclick="addToCart({name: 'Arreglo 6', price: 700, qty: 1, img:'arreglos florales/arreglo6.jpg'})">Agregar al carrito</button>
+            </div>
+            <div>
+                  <img src="arreglos florales/arreglo7.jpg" alt="Arreglo 7" width="400" height="350">
+                  <p>Arreglo 7 - $620</p>
+                  <button onclick="addToCart({name: 'Arreglo 7', price: 620, qty: 1, img:'arreglos florales/arreglo7.jpg'})">Agregar al carrito</button>
+            </div>
+            <div>
+                  <img src="arreglos florales/arreglo8.jpg" alt="Arreglo 8" width="400" height="350">
+                  <p>Arreglo 8 - $1500</p>
+                  <button onclick="addToCart({name: 'Arreglo 8', price: 1500, qty: 1, img:'arreglos florales/arreglo8.jpg'})">Agregar al carrito</button>
+            </div>
+            <div>
+                  <img src="arreglos florales/arreglo9.jpg" alt="Arreglo 9" width="400" height="350">
+                  <p>Arreglo 9 - $1400</p>
+                  <button onclick="addToCart({name: 'Arreglo 9', price: 1400, qty: 1, img:'arreglos florales/arreglo9.jpg'})">Agregar al carrito</button>
+            </div>
+            <div>
+                  <img src="arreglos florales/arreglo10.jpg" alt="Arreglo 10" width="400" height="350">
+                  <p>Arreglo 10 - $990</p>
+                  <button onclick="addToCart({name: 'Arreglo 10', price: 990, qty: 1, img:'arreglos florales/arreglo10.jpg'})">Agregar al carrito</button>
+            </div>
+            <div>
+                  <img src="arreglos florales/arreglo11.jpg" alt="Arreglo 11" width="400" height="350">
+                  <p>Arreglo 11 - $1500</p>
+                  <button onclick="addToCart({name: 'Arreglo 11', price: 1500, qty: 1, img:'arreglos florales/arreglo11.jpg'})">Agregar al carrito</button>
+            </div>
+            <div>
+                  <img src="arreglos florales/arreglo12.jpg" alt="Arreglo 12" width="400" height="350">
+                  <p>Arreglo 12 - $1200</p>
+                  <button onclick="addToCart({name: 'Arreglo 12', price: 1200, qty: 1, img:'arreglos florales/arreglo12.jpg'})">Agregar al carrito</button>
+            </div>
+            <div>
+                  <img src="arreglos florales/arreglo13.jpg" alt="Arreglo 13" width="400" height="350">
+                  <p>Arreglo 13 - $700</p>
+                  <button onclick="addToCart({name: 'Arreglo 13', price: 700, qty: 1, img:'arreglos florales/arreglo13.jpg'})">Agregar al carrito</button>
+            </div>
+            <div>
+                  <img src="arreglos florales/arreglo14.jpg" alt="Arreglo 14" width="400" height="350">
+                  <p>Arreglo 14 - $800</p>
+                  <button onclick="addToCart({name: 'Arreglo 14', price: 800, qty: 1, img:'arreglos florales/arreglo14.jpg'})">Agregar al carrito</button>
+            </div>
+            <div>
+                  <img src="arreglos florales/arreglo15.jpg" alt="Arreglo 15" width="400" height="350">
+                  <p>Arreglo 15 - $800</p>
+                  <button onclick="addToCart({name: 'Arreglo 15', price: 800, qty: 1, img:'arreglos florales/arreglo15.jpg'})">Agregar al carrito</button>
+            </div>
+            <div>
+                  <img src="arreglos florales/arreglo16.jpg" alt="Arreglo 16" width="400" height="350">
+                  <p>Arreglo 16 - $450</p>
+                  <button onclick="addToCart({name: 'Arreglo 16', price: 450, qty: 1, img:'arreglos florales/arreglo16.jpg'})">Agregar al carrito</button>
+            </div>
+            <div>
+                  <img src="arreglos florales/arreglo17.jpg" alt="Arreglo 17" width="400" height="350">
+                  <p>Arreglo 17 - $1200</p>
+                  <button onclick="addToCart({name: 'Arreglo 17', price: 1200, qty: 1, img:'arreglos florales/arreglo17.jpg'})">Agregar al carrito</button>
+            </div>
+            <div>
+                  <img src="arreglos florales/arreglo18.jpg" alt="Arreglo 18" width="400" height="350">
+                  <p>Arreglo 18 - $820</p>
+                  <button onclick="addToCart({name: 'Arreglo 18', price: 820, qty: 1, img:'arreglos florales/arreglo18.jpg'})">Agregar al carrito</button>
+            </div>
+      </div>
+      </div>

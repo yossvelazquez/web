@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Populares</title>
+    <link rel="stylesheet" href="estilospages.css">
+</head>
+<body>
+    <div class="nav">
+        <a href="index.html">Inicio</a>
+        <a href="ramos.html">Ramos</a>
+        <a href="Festividades.html">Festividades</a>
+        <a href="arreglos.html">Arreglos</a> 
+        <a href="Floreros.html">Floreros</a>
+    </div>
+    <script src="carrito.js"></script>
+    <div class="cart-icon" style="position: fixed; top: 24px; right: 24px; z-index: 1000; cursor: pointer;">
+        <img src="img_index\carrito de compras.png" alt="Carrito de compras" id="cartIcon" style="width: 48px;">
+        <span id="cartCount" style="position: absolute; top: 0; right: 0; background: #d6336c; color: #fff; border-radius: 50%; padding: 2px 8px; font-size: 1em;">0</span>
+    </div>
+    <!-- Modal del carrito -->
+    <div id="cartModal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.35); z-index:2000; align-items:center; justify-content:center;">
+        <div style="background:#fff; border-radius:16px; max-width:400px; width:90%; padding:32px 24px 24px 24px; box-shadow:0 8px 32px rgba(60,60,60,0.18); position:relative;">
+            <button id="closeCart" style="position:absolute; top:12px; right:16px; background:none; border:none; font-size:1.5em; color:#d6336c; cursor:pointer;">&times;</button>
+            <h3 style="margin-top:0; color:#d6336c; text-align:center;">Tu Carrito</h3>
+            <div id="cartItems" style="max-height:220px; overflow-y:auto; margin-bottom:18px;"></div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:18px;">
+                <strong>Total:</strong>
+                <span id="cartTotal">$0.00</span>
+            </div>
+            <button id="clearCart" style="background:#e0e2e6; color:#d6336c; border:none; border-radius:8px; padding:8px 16px; margin-right:8px; cursor:pointer;">Vaciar Carrito</button>
+            <button id="checkoutCart" style="background:linear-gradient(90deg,#d6336c 60%,#67acaa 100%); color:#fff; border:none; border-radius:8px; padding:8px 16px; cursor:pointer;">Comprar</button>
+        </div>
+    </div>
+    <div class="populares">
+        <h2>Arreglos Populares</h2>
+        <p>Descubre nuestros arreglos más populares.</p>
+        <div class="popular-arrangements">
+            <div>
+            <div style="display: flex; flex-wrap: wrap; gap: 24px; justify-content: center;">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <img src="ramos unicos/100rojayrosa.jpg" alt="Ramo de 100 Rosas Rojas y Rosas" width="400" height="350">
+                    <p>$1200 MXN</p>
+                    <button onclick="addToCart({name: 'Ramo de 100 Rosas Rojas y Rosas', price: 1000, qty: 1, img:'ramos unicos/100rojayrosa.jpg'})">Agregar al carrito</button>
+                </div>
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <img src="ramos unicos/50rosasrojayrosa.jpg" alt="Ramo de Rosas" width="400" height="350">
+                    <p>$1000 MXN</p>
+                    <button onclick="addToCart({name: 'Ramo de Rosas', price: 1000, qty: 1, img:'ramos unicos/50rosasrojayrosa.jpg'})">Agregar al carrito</button>
+                </div>
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <img src="ramos unicos/tulip3.jpg" alt="Ramo de Tulipanes" width="400" height="350">
+                    <p>$1500 MXN</p>
+                    <button onclick="addToCart({name: 'Ramo de Tulipanes', price: 950, qty: 1, img:'ramos unicos/tulip3.jpg'})">Agregar al carrito</button>
+                </div>
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <img src="ramos unicos/girasoles2.jpg" alt="Ramo de Girasoles" width="400" height="350">
+                    <p>$790 MXN</p>
+                    <button onclick="addToCart({name: 'Ramo de Girasoles', price: 850, qty: 1, img:'ramos unicos/girasoles2.jpg'})">Agregar al carrito</button>
+                </div>
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <img src="ramos unicos/rosasdecolores.jpg" alt="Ramo de Rosas de Colores" width="400" height="350">
+                    <p>$700 MXN</p>
+                    <button onclick="addToCart({name: 'Ramo de Rosas de Colores', price: 900, qty: 1, img:'ramos unicos/rosasdecolores.jpg'})">Agregar al carrito</button>
+                </div>
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <img src="ramos unicos/girasoles3.jpg" alt="Ramo de Girasoles 2" width="400" height="350">
+                    <p>$700 MXN</p>
+                    <button onclick="addToCart({name: 'Ramo de Girasoles 2', price: 850, qty: 1, img:'ramos unicos/girasoles3.jpg'})">Agregar al carrito</button>
+                </div>
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <img src="festividades/felizcumpleaños5.jpg" alt="Arreglo de Cumpleaños" width="400" height="350">
+                    <p>$3000 MXN</p>
+                    <button onclick="addToCart({name: 'Arreglo de Cumpleaños', price: 1200, qty: 1, img:'festividades/felizcumpleaños5.jpg'})">Agregar al carrito</button>
+                </div>
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <img src="ramos unicos/gerberas2.jpg" alt="Ramo de Gerberas" width="400" height="350">
+                    <p>$850 MXN</p>
+                    <button onclick="addToCart({name: 'Ramo de Gerberas', price: 800, qty: 1, img:'ramos unicos/gerberas2.jpg'})">Agregar al carrito</button>
+                </div>
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <img src="ramos unicos/rosassrojayblanca2.jpg" alt="Ramo de Rosas Rojas y Blancas" width="400" height="350">
+                    <p>$1500 MXN</p>
+                    <button onclick="addToCart({name: 'Ramo de Rosas Rojas y Blancas', price: 950, qty: 1, img:'ramos unicos/rosassrojayblanca2.jpg'})">Agregar al carrito</button>
+                </div>
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <img src="ramos unicos/margaritas2.jpg" alt="Ramo de Margaritas" width="400" height="350">
+                    <p>$400 MXN</p>
+                    <button onclick="addToCart({name: 'Ramo de Margaritas', price: 750, qty: 1, img:'ramos unicos/margaritas2.jpg'})">Agregar al carrito</button>
+                </div>
+            </div>
+</body>
+</html>
